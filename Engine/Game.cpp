@@ -30,7 +30,7 @@ Game::Game( MainWindow& wnd )
 	rng( rd() ),
 	xDist( 0,770 ),
 	yDist( 0,570 ),
-	fart(L"fart0.wav")
+	fart({ L"fart0.wav", L"fart1.wav", L"fart2.wav" })
 {
 	std::uniform_int_distribution<int> vDist( -1,1 );
 	for( int i = 0; i < nPoo; ++i )
@@ -58,7 +58,7 @@ void Game::UpdateModel()
 		{
 			poos[i].Update();
 			if (poos[i].ProcessConsumption(dude)) {
-				fart.Play();
+				fart.Play(rng);
 			}
 		}
 	}
