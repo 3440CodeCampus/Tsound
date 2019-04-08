@@ -57,7 +57,9 @@ void Game::UpdateModel()
 		for( int i = 0; i < nPoo; ++i )
 		{
 			poos[i].Update();
-			poos[i].ProcessConsumption( dude );
+			if (poos[i].ProcessConsumption(dude)) {
+				fart.Play();
+			}
 		}
 	}
 	else

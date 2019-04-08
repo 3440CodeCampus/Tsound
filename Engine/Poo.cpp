@@ -44,7 +44,7 @@ void Poo::Update()
 	}
 }
 
-void Poo::ProcessConsumption( const Dude& dude )
+bool Poo::ProcessConsumption( const Dude& dude )
 {
 	assert( initialized == true );
 	const int duderight = dude.GetX() + dude.GetWidth();
@@ -57,8 +57,13 @@ void Poo::ProcessConsumption( const Dude& dude )
 		dudebottom >= y &&
 		dude.GetY() <= poobottom )
 	{
-		isEaten = true;
+		if(!isEaten)
+		{
+			isEaten = true;
+			return true;
+		}
 	}
+	return false;
 }
 
 void Poo::Draw( Graphics& gfx ) const
