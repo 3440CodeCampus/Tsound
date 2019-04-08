@@ -29,7 +29,8 @@ Game::Game( MainWindow& wnd )
 	gfx( wnd ),
 	rng( rd() ),
 	xDist( 0,770 ),
-	yDist( 0,570 )
+	yDist( 0,570 ),
+	fart(L"fart0.wav")
 {
 	std::uniform_int_distribution<int> vDist( -1,1 );
 	for( int i = 0; i < nPoo; ++i )

@@ -25,6 +25,7 @@
 #include "Graphics.h"
 #include "Poo.h"
 #include "Dude.h"
+#include "Sound.h"
 #include <random>
 
 class Game
@@ -53,5 +54,6 @@ private:
 	static constexpr int nPoo = 3;
 	Poo poos[nPoo];
 	bool isStarted = false;
+	Sound fart;
 	/********************************/
 };
